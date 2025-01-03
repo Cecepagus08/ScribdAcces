@@ -9,7 +9,7 @@ const box = [
     no : "2",
     title : "Bebas Langganan",
     gambar: 'credit-card.png',
-    text : "Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan.p"
+    text : "Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan."
   },
   {
     no : "3",
