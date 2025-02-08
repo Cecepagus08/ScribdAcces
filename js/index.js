@@ -131,7 +131,7 @@ function proses(url) {
     }, 500);
   } else {
     notifOn();
-    errorMsg.innerText = "URL tidak valid";
+    errorMsg.innerText = "Url tidak valid";
   }
 }
 
