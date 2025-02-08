@@ -19,17 +19,17 @@ const boxData = [
   }
 ];
 let errorMsg = document.querySelector(".error-message");
-const containerBox = document.querySelector('.container-box');
+const containerBox = document.querySelector('.show-card');
 boxData.forEach(item => {
   const box = `
-    <div class="col-11 col-sm-5 col-lg-4 container">
-      <div class="row justify-content-start">
-        <div class="text-dark col-12 col-sm-12 shadow-lg bg-light-subtle rounded-2 p-2 position-relative">
-          <img src="assets/${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3 " alt="">
-          <h1 class="fs-2 box-title">${item.title}</h1>
-          <p class=" box-deskripsi m-0 col-11">${item.text}</p>
+    <div class="col-11 col-sm-5 col-lg-4 mt-3 container">
+        <div class="row justify-content-start h-100">
+            <div class="text-dark col-12 col-sm-12 shadow-lg bg-light-subtle rounded-2 p-2 position-relative d-flex flex-column h-100">
+                <img src="assets/${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3" alt="">
+                <h1 class="fs-2 box-title">${item.title}</h1>
+                <p class="box-deskripsi m-0 col-11 flex-grow-1">${item.text}</p>
+            </div>
         </div>
-      </div>
     </div>
   `;
   containerBox.innerHTML += box;
@@ -113,13 +113,13 @@ function cekUrl() {
 function proses(url) {
   console.log("berhasil");
 
+  // Fungsi untuk mengekstrak angka di antara '/' pertama dan terakhir
   function extractNumbers(url) {
-    const numbers = url.match(/\d+/g); // Cari semua angka dalam URL
-    if (numbers) {
-      const combinedNumbers = numbers.join(""); // Gabungkan semua angka
-      if (combinedNumbers.length === 9) { // Validasi jika tepat 9 angka
-        return combinedNumbers;
-      }
+    const regex = /\/(\d+)\//; // Regex untuk mengambil angka di antara '/'
+    const match = url.match(regex); // Mencocokkan pola dengan URL
+
+    if (match) {
+      return match[1]; // Kembalikan angka yang ditemukan
     }
     return null;
   }
@@ -131,7 +131,9 @@ function proses(url) {
     }, 500);
   } else {
     notifOn();
-    errorMsg.innerText = "Url tidak valid";
+    errorMsg.innerText = "URL tidak valid";
   }
 }
+
+
 
