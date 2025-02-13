@@ -2,19 +2,19 @@ const boxData = [
   {
     no: "1",
     title: "Bebas Iklan",
-    gambar: 'no.png',
+    gambar: 'https://scribd-acces.vercel.app/assets/no.png',
     text: "Membaca dokumen di Scribd tanpa gangguan iklan memberikan pengalaman yang lebih nyaman dan fokus."
   },
   {
     no: "2",
     title: "Bebas Langganan",
-    gambar: 'credit-card.png',
+    gambar: 'https://scribd-acces.vercel.app/assets/credit-card.png',
     text: "Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan."
   },
   {
     no: "3",
     title: "Akses Tanpa Batas",
-    gambar: 'infinity.png',
+    gambar: 'https://scribd-acces.vercel.app/assets/infinity.png',
     text: "Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan."
   }
 ];
@@ -25,7 +25,7 @@ boxData.forEach(item => {
     <div class="col-11 col-sm-5 col-lg-4 mt-3 container">
         <div class="row justify-content-start h-100">
             <div class="text-dark col-12 col-sm-12 shadow-lg bg-light-subtle rounded-2 p-2 position-relative d-flex flex-column h-100">
-                <img src="assets/${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3" alt="">
+                <img src="${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3" alt="">
                 <h1 class="fs-2 box-title">${item.title}</h1>
                 <p class="box-deskripsi m-0 col-11 flex-grow-1">${item.text}</p>
             </div>
