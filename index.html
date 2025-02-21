@@ -15,10 +15,10 @@
 <meta name="robots" content="index, follow">
 
   <title>ScribdAccess</title>
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="assets/logo2.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="css/styles.css">
 
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -26,288 +26,7 @@
 
   
 </head>
-<style>
-  *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
-  height: 100vh;
-  width: 100%;
-  background-color: #f2f2f2;
-}
-/*
-/* From Uiverse.io by Nawsome */ 
-.continue-application {
-  --color: #fff;
-  --background: #404660;
-  --background-hover: #3A4059;
-  --background-left: #2B3044;
-  --folder: #F3E9CB;
-  --folder-inner: #BEB393;
-  --paper: #FFFFFF;
-  --paper-lines: #BBC1E1;
-  --paper-behind: #E1E6F9;
-  --pencil-cap: #fff;
-  --pencil-top: #275EFE;
-  --pencil-middle: #fff;
-  --pencil-bottom: #5C86FF;
-  --shadow: rgba(13, 15, 25, .2);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 19px;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  padding: 17px 29px 17px 69px;
-  transition: background 0.3s;
-  color: var(--color);
-  background: var(--bg, var(--background));
-}
 
-.continue-application > div {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 53px;
-  position: absolute;
-  overflow: hidden;
-  border-radius: 5px 0 0 5px;
-  background: var(--background-left);
-}
-
-.continue-application > div .folder {
-  width: 23px;
-  height: 27px;
-  position: absolute;
-  left: 15px;
-  top: 13px;
-}
-
-.continue-application > div .folder .top {
-  left: 0;
-  top: 0;
-  z-index: 2;
-  position: absolute;
-  transform: translateX(var(--fx, 0));
-  transition: transform 0.4s ease var(--fd, 0.3s);
-}
-
-.continue-application > div .folder .top svg {
-  width: 24px;
-  height: 27px;
-  display: block;
-  fill: var(--folder);
-  transform-origin: 0 50%;
-  transition: transform 0.3s ease var(--fds, 0.45s);
-  transform: perspective(120px) rotateY(var(--fr, 0deg));
-}
-
-.continue-application > div .folder:before, .continue-application > div .folder:after,
-.continue-application > div .folder .paper {
-  content: "";
-  position: absolute;
-  left: var(--l, 0);
-  top: var(--t, 0);
-  width: var(--w, 100%);
-  height: var(--h, 100%);
-  border-radius: 1px;
-  background: var(--b, var(--folder-inner));
-}
-
-.continue-application > div .folder:before {
-  box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow), 0 3.5px 7px var(--shadow);
-  transform: translateX(var(--fx, 0));
-  transition: transform 0.4s ease var(--fd, 0.3s);
-}
-
-.continue-application > div .folder:after,
-.continue-application > div .folder .paper {
-  --l: 1px;
-  --t: 1px;
-  --w: 21px;
-  --h: 25px;
-  --b: var(--paper-behind);
-}
-
-.continue-application > div .folder:after {
-  transform: translate(var(--pbx, 0), var(--pby, 0));
-  transition: transform 0.4s ease var(--pbd, 0s);
-}
-
-.continue-application > div .folder .paper {
-  z-index: 1;
-  --b: var(--paper);
-}
-
-.continue-application > div .folder .paper:before, .continue-application > div .folder .paper:after {
-  content: "";
-  width: var(--wp, 14px);
-  height: 2px;
-  border-radius: 1px;
-  transform: scaleY(0.5);
-  left: 3px;
-  top: var(--tp, 3px);
-  position: absolute;
-  background: var(--paper-lines);
-  box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
-}
-
-.continue-application > div .folder .paper:after {
-  --tp: 6px;
-  --wp: 10px;
-}
-
-.continue-application > div .pencil {
-  height: 2px;
-  width: 3px;
-  border-radius: 1px 1px 0 0;
-  top: 8px;
-  left: 105%;
-  position: absolute;
-  z-index: 3;
-  transform-origin: 50% 19px;
-  background: var(--pencil-cap);
-  transform: translateX(var(--pex, 0)) rotate(35deg);
-  transition: transform 0.4s ease var(--pbd, 0s);
-}
-
-.continue-application > div .pencil:before, .continue-application > div .pencil:after {
-  content: "";
-  position: absolute;
-  display: block;
-  background: var(--b, linear-gradient(var(--pencil-top) 55%, var(--pencil-middle) 55.1%, var(--pencil-middle) 60%, var(--pencil-bottom) 60.1%));
-  width: var(--w, 5px);
-  height: var(--h, 20px);
-  border-radius: var(--br, 2px 2px 0 0);
-  top: var(--t, 2px);
-  left: var(--l, -1px);
-}
-
-.continue-application > div .pencil:before {
-  -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
-  clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
-}
-
-.continue-application > div .pencil:after {
-  --b: none;
-  --w: 3px;
-  --h: 6px;
-  --br: 0 2px 1px 0;
-  --t: 3px;
-  --l: 3px;
-  border-top: 1px solid var(--pencil-top);
-  border-right: 1px solid var(--pencil-top);
-}
-
-.continue-application:before, .continue-application:after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  border-radius: 1px;
-  background: var(--color);
-  transform-origin: 9px 1px;
-  transform: translateX(var(--cx, 0)) scale(0.5) rotate(var(--r, -45deg));
-  top: 26px;
-  right: 16px;
-  transition: transform 0.3s;
-}
-
-.continue-application:after {
-  --r: 45deg;
-}
-
-.continue-application.active:hover {
-  --cx: 2px;
-  --bg: var(--background-hover);
-  --fx: -40px;
-  --fr: -60deg;
-  --fd: .15s;
-  --fds: 0s;
-  --pbx: 3px;
-  --pby: -3px;
-  --pbd: .15s;
-  --pex: -24px;
-}
-.box-title{
-  
-}
-.box-deskripsi{
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-family: "Figtree", serif;
-}
-.Kanit{
-  
-  font-family: "Kanit", serif;
-}
-.sosmed{
-  padding: 4px;
-  height: 40px;
-  width: 40px;
-  border-radius: 5px;
-}
-.sosmed:nth-child(2):hover{
-  
-  background: #f09433;
-  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  animation: bounce_613 0.4s linear;
-}
-.sosmed:nth-child(1):hover {
-   
-  background-color: #1a1e22;
-   color: whitesmoke;
-  animation: bounce_613 0.4s linear;
-}
-
-
-@keyframes bounce_613 {
-  40% {
-    transform: scale(1.4);
-  }
-
-  60% {
-    transform: scale(0.8);
-  }
-
-  80% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
-.alert {
-  min-width: 210px;
-  left: 50%;
-  top: -150px; /* Posisi awal */
-  transform: translateX(-50%);
-  z-index: 9999;
-  position: fixed; /* Pastikan posisi fixed */
-  transition: top 0.5s ease; /* Smooth perubahan nilai top selama 0.5 detik */
-}
-
-.alert.active {
-  top: 10px; /* Posisi setelah aktif */
-}
-.form-control{
-  height: 50px;
-}
-</style>
 <body>
   
   <section>
@@ -382,7 +101,6 @@ cepat dan efisuen -->
   </section>
   <section>
     <div class="container">
-<!--       <p class="text-center kanit fs-1 fw-bolder">kenapa harus <span class="text-primary">ScribdAcces</span>?</p> -->
     <div class="row gap-3 gap-sm-1 gap-lg-1 p-0 m-0 justify-content-center align-items-stretch show-card">
 
 
@@ -421,54 +139,23 @@ cepat dan efisuen -->
   
   
   <section>
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5 mb-5">
       <div class="row gap-1 justify-content-center align-items-center ">
-
         <a href="https://github.com/Cecepagus08" class="text-decoration-none  col-1 sosmed d-flex justify-content-center align-items-center text-center ">
           <p class="m-0 fs-1 d-flex align-items-center justify-content-center">
             <i class="ph ph-github-logo m-0"></i>
           </p>
-
         </a>
         <a href="https://www.instagram.com/cecep_agus08/#" class="text-decoration-none  col-1 sosmed d-flex justify-content-center align-items-center text-center ">
           <p class="m-0 fs-1 d-flex align-items-center justify-content-center">
             <i class="ph ph-instagram-logo  m-0"></i>
           </p>
-
         </a>
-<!--         <div class="col-1 bg-warning d-flex justify-content-center align-items-center ">
-          <p class="m-0">2</p>
-
-        </div> -->
-
       </div>
     </div>
   </section>
   
-  
-<!--     <section>
-    <div class="container mb-1">
-      <div class="row g-3 justify-content-center align-items-center">
-        <div class="col-9 bg-light shadow-sm text-black rounded-2 p-2">
-          <p class="fw-bold fs-5">Tekan titik tiga pada pojok kanan atas</p>
-          <img class="card-img shadow-sm" src="assets/titik-tiga.jpg" alt="">
-          <p></p>
-        </div>
-        <div class="col-9 bg-light shadow-sm text-black rounded-2 p-2">
-          <p class="fw-bold fs-5">Tekan titik tiga pada pojok kanan atas</p>
-          <img class="card-img shadow-sm" src="assets/salin-link.jpg" alt="">
-          <p></p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  
-  <section>
-    <div class="container p-4">
 
-
-    </div>
-  </section>
 
 
 
