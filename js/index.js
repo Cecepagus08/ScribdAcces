@@ -22,27 +22,28 @@ let errorMsg = document.querySelector(".error-message");
 const containerBox = document.querySelector('.show-card');
 boxData.forEach(item => {
   const box = `
-    <div class="col-11 col-sm-5 col-lg-4 mt-3 container">
-        <div class="row justify-content-start h-100">
-            <div class="text-dark col-12 col-sm-12 shadow-lg bg-light-subtle rounded-2 p-2 position-relative d-flex flex-column h-100">
+          <div class="col-12 col-sm-6 col-lg-5 mt-3">
+            <div class="text-dark shadow-lg bg-light-subtle rounded-2 p-2 d-flex flex-column h-100">
                 <img src="${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3" alt="">
                 <h1 class="fs-2 box-title">${item.title}</h1>
-                <p class="box-deskripsi m-0 col-11 flex-grow-1">${item.text}</p>
+                <p class="box-deskripsi m-0 flex-grow-1">${item.text}</p>
             </div>
         </div>
-    </div>
+  
+
   `;
   containerBox.innerHTML += box;
 });
 
+const inputContainer = document.querySelector(".container-input")
 const urlInput = document.getElementById('url');
 const buttonReadNow = document.querySelector(".continue-application");
 
 urlInput.addEventListener('input', () => {
   if (urlInput.value.trim() !== "") {
     buttonReadNow.classList.add("active")
-     urlInput.classList.remove("border-danger")
-     urlInput.classList.add("border-secondary")
+     inputContainer.classList.remove("border-danger")
+     inputContainer.classList.add("border-secondary")
     
   } else {
     buttonReadNow.classList.remove("active")
@@ -74,6 +75,7 @@ function notifOn() {
 function notifOff() {
   // Hapus class aktif
   alert.classList.remove("active");
+  inputContainer.classList.remove("border-danger")
 
   // Hapus timeout jika ada
   if (timeoutID) {
@@ -99,12 +101,12 @@ function cekUrl() {
   if(!url){
     notifOn();
     errorMsg.innerText = "Masukkan Url";
-    urlInput.classList.add("border-danger")
-     urlInput.classList.remove("border-secondary")
+    inputContainer.classList.add("border-danger")
+     inputContainer.classList.remove("border-secondary")
   }else{
-    urlInput.classList.remove("border-danger")
+    inputContainer.classList.remove("border-danger")
     
-     urlInput.classList.add("border-secondary")
+     inputContainer.classList.add("border-secondary")
      proses(url);
   }
   
@@ -137,3 +139,17 @@ function proses(url) {
 
 
 
+const btnPaste = document.querySelector(".btn-paste-url");
+
+btnPaste.addEventListener("click", () =>{
+  console.log("paste")
+  navigator.clipboard.readText()
+        .then(text => {
+            
+            urlInput.value = text;
+
+            // Memicu event input agar fungsinya tetap berjalan
+            
+        })
+        .catch(err => console.error("Gagal mengambil teks dari clipboard:", err));
+});
