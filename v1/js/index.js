@@ -2,19 +2,19 @@ const boxData = [
   {
     no: "1",
     title: "Bebas Iklan",
-    gambar: 'https://scribd-acces.vercel.app/assets/no.png',
+    gambar: 'assets/no.png',
     text: "Membaca dokumen di Scribd tanpa gangguan iklan memberikan pengalaman yang lebih nyaman dan fokus."
   },
   {
     no: "2",
     title: "Bebas Langganan",
-    gambar: 'https://scribd-acces.vercel.app/assets/credit-card.png',
+    gambar: 'assets/credit-card.png',
     text: "Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan."
   },
   {
     no: "3",
     title: "Akses Tanpa Batas",
-    gambar: 'https://scribd-acces.vercel.app/assets/infinity.png',
+    gambar: 'assets/infinity.png',
     text: "Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan."
   }
 ];

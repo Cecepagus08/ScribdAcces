@@ -24,23 +24,23 @@
   <meta name="theme-color" content="#3B82F6">
 
   <!-- Favicon & Icons -->
-  <link rel="icon" type="image/png" href="https://scribd-acces.vercel.app/assets/logo2.png">
-  <link rel="apple-touch-icon" href="https://scribd-acces.vercel.app/assets/logo2.png">
-  <link rel="shortcut icon" href="https://scribd-acces.vercel.app/assets/logo2.png" type="image/png">
+  <link rel="icon" type="image/png" href="/logo2.png">
+  <link rel="apple-touch-icon" href="/logo2.png">
+  <link rel="shortcut icon" href="/logo2.png" type="image/png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://scribdacces.my.id/v2/">
   <meta property="og:title" content="ScribdAccess — Buka & Baca Dokumen Scribd Gratis Tanpa Batas">
   <meta property="og:description" content="Akses dan baca dokumen serta jurnal Scribd tanpa akun berbayar. Cepat, instan, bebas iklan, dan 100% gratis.">
-  <meta property="og:image" content="https://scribd-acces.vercel.app/assets/logo2.png">
+  <meta property="og:image" content="https://scribdacces.my.id/logo2.png">
 
   <!-- Twitter Card -->
   <meta property="twitter:card" content="summary">
   <meta property="twitter:url" content="https://scribdacces.my.id/v2/">
   <meta property="twitter:title" content="ScribdAccess — Buka & Baca Dokumen Scribd Gratis Tanpa Batas">
   <meta property="twitter:description" content="Akses dan baca dokumen serta jurnal Scribd tanpa akun berbayar. Cepat, instan, bebas iklan, dan 100% gratis.">
-  <meta property="twitter:image" content="https://scribd-acces.vercel.app/assets/logo2.png">
+  <meta property="twitter:image" content="https://scribdacces.my.id/logo2.png">
 
   <!-- Structured Data (JSON-LD) for Search Engines -->
   <script type="application/ld+json">
@@ -252,8 +252,8 @@
   <div class="container" style="max-width:900px">
     <div class="d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-2">
-        <!-- Logo from CDN -->
-        <img src="https://scribd-acces.vercel.app/assets/logo2.png" alt="ScribdAccess Logo" width="42" height="42" style="border-radius:10px;object-fit:contain;">
+        <!-- Logo from root -->
+        <img src="/logo2.png" alt="ScribdAccess Logo" width="42" height="42" style="border-radius:10px;object-fit:contain;">
         <div>
           <div class="nav-brand-name">Scribd<span>Access</span></div>
           <div style="font-size:10px;font-weight:600;color:var(--gray);letter-spacing:.04em">Document Reader Hub</div>
@@ -450,9 +450,9 @@
 
 <script>
 const boxData = [
-  { no:"1", title:"Bebas Iklan",       gambar:'https://scribd-acces.vercel.app/assets/no.png',          text:"Membaca dokumen di Scribd tanpa gangguan iklan memberikan pengalaman yang lebih nyaman dan fokus." },
-  { no:"2", title:"Bebas Langganan",   gambar:'https://scribd-acces.vercel.app/assets/credit-card.png', text:"Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan." },
-  { no:"3", title:"Akses Tanpa Batas", gambar:'https://scribd-acces.vercel.app/assets/infinity.png',   text:"Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan." }
+  { no:"1", title:"Bebas Iklan",       gambar:'/v1/assets/no.png',          text:"Membaca dokumen di Scribd tanpa gangguan iklan memberikan pengalaman yang lebih nyaman dan fokus." },
+  { no:"2", title:"Bebas Langganan",   gambar:'/v1/assets/credit-card.png', text:"Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan." },
+  { no:"3", title:"Akses Tanpa Batas", gambar:'/v1/assets/infinity.png',   text:"Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan." }
 ];
 
 let errorMsg = document.querySelector(".error-message");
