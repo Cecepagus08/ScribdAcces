@@ -24,7 +24,7 @@ https://www.scribd.com/embeds/IDSCRIBD/content?start_page=1&view_mode=scroll&acc
 
 ## Cara Menggunakan
 
-1. Buka website ScribdAcces: [ScribdAcces](https://scribd-acces.vercel.app).
+1. Buka website ScribdAccess: [ScribdAccess](https://scribdacces.my.id).
 2. Masukkan URL dokumen Scribd yang ingin diakses.
 3. Klik tombol **Read Now** dan tunggu proses selesai.
 4. Dokumen akan tersedia untuk dibaca secara gratis.

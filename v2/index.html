@@ -24,9 +24,9 @@
   <meta name="theme-color" content="#3B82F6">
 
   <!-- Favicon & Icons -->
-  <link rel="icon" type="image/png" href="/logo2.png">
-  <link rel="apple-touch-icon" href="/logo2.png">
-  <link rel="shortcut icon" href="/logo2.png" type="image/png">
+  <link rel="icon" type="image/png" href="assets/logo2.png">
+  <link rel="apple-touch-icon" href="assets/logo2.png">
+  <link rel="shortcut icon" href="assets/logo2.png" type="image/png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -238,7 +238,7 @@
 </head>
 <body>
 
-<!-- â•â•â• TOAST ALERT â•â•â• -->
+<!-- ━━━ TOAST ALERT ━━━ -->
 <div class="alert" id="toast-alert" role="alert">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0">
     <circle cx="10" cy="10" r="9" stroke="#EF4444" stroke-width="2"/>
@@ -247,19 +247,22 @@
   <p class="error-message">URL tidak valid!</p>
 </div>
 
-<!-- â•â•â• NAVBAR â•â•â• -->
+<!-- ━━━ NAVBAR ━━━ -->
 <nav class="site-nav">
   <div class="container" style="max-width:900px">
     <div class="d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-2">
-        <!-- Logo from root -->
-        <img src="/logo2.png" alt="ScribdAccess Logo" width="42" height="42" style="border-radius:10px;object-fit:contain;">
+        <!-- Logo from assets -->
+        <img src="assets/logo2.png" alt="ScribdAccess Logo" width="42" height="42" style="border-radius:10px;object-fit:contain;" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='../assets/logo2.png';}">
         <div>
           <div class="nav-brand-name">Scribd<span>Access</span></div>
-          <div style="font-size:10px;font-weight:600;color:var(--gray);letter-spacing:.04em">Document Reader Hub</div>
+          <div style="font-size:10px;font-weight:600;color:var(--gray);letter-spacing:.04em">Document Reader Hub <span style="background:var(--blue);color:white;font-size:9px;padding:2px 6px;border-radius:6px;font-weight:700;">v2.0</span></div>
         </div>
       </div>
       <div class="d-flex align-items-center gap-2">
+        <a href="../v1/" style="font-size:12px;font-weight:700;color:var(--gray);text-decoration:none;border:1.5px solid var(--border-soft);padding:4px 10px;border-radius:8px;transition:all .15s;background:white;" onmouseover="this.style.borderColor='var(--border)';this.style.color='var(--dark)'" onmouseout="this.style.borderColor='var(--border-soft)';this.style.color='var(--gray)'">
+          Versi Klasik (v1)
+        </a>
         <span class="nav-status">
           <span class="dot"></span>
           Online &amp; Cepat
@@ -269,7 +272,7 @@
   </div>
 </nav>
 
-<!-- â•â•â• HERO â•â•â• -->
+<!-- ━━━ HERO ━━━ -->
 <section class="hero-section">
   <!-- Doodle background decorations -->
   <svg class="hero-bg-doodle" style="top:-10px;right:0;width:200px" viewBox="0 0 200 200" fill="none">
@@ -301,7 +304,7 @@
           Buka Dokumen<br>Scribd <span class="underline-yellow">Instan</span>
         </h1>
         <p class="hero-sub mb-0">
-          Akses dan baca dokumen, jurnal, serta makalah Scribd secara mudahâ€”gratis tanpa langganan, tanpa iklan.
+          Akses dan baca dokumen, jurnal, serta makalah Scribd secara mudah — gratis tanpa langganan, tanpa iklan.
         </p>
       </div>
 
@@ -357,7 +360,7 @@
   </div>
 </section>
 
-<!-- â•â•â• PROMO BANNER â•â•â• -->
+<!-- ━━━ PROMO BANNER ━━━ -->
 <section class="pb-4">
   <div class="container" style="max-width:900px">
     <div class="promo-banner">
@@ -368,7 +371,7 @@
       <div class="flex-grow-1">
         <span class="promo-badge">Preview Instan</span>
         <h2 class="promo-title">Format Reader Bebas Repot</h2>
-        <p class="promo-text">Langsung telaah makalah akademik, slide decks, hingga buku favoritâ€”tanpa registrasi.</p>
+        <p class="promo-text">Langsung telaah makalah akademik, slide decks, hingga buku favorit — tanpa registrasi.</p>
       </div>
       <div class="promo-icon">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -381,7 +384,7 @@
   </div>
 </section>
 
-<!-- â•â•â• FEATURES (rendered by JS) â•â•â• -->
+<!-- ━━━ FEATURES (rendered by JS) ━━━ -->
 <section class="py-4">
   <div class="container" style="max-width:900px">
     <div class="section-eyebrow">
@@ -393,7 +396,7 @@
   </div>
 </section>
 
-<!-- â•â•â• HOW TO USE â•â•â• -->
+<!-- ━━━ HOW TO USE ━━━ -->
 <section class="py-4">
   <div class="container" style="max-width:900px">
     <div class="section-eyebrow">
@@ -436,23 +439,25 @@
   </div>
 </section>
 
-<!-- â•â•â• FOOTER â•â•â• -->
+<!-- ━━━ FOOTER ━━━ -->
 <footer class="site-footer">
   <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2" style="max-width:900px">
-    <span>Â© 2025 ScribdAccess. Dibuat untuk tujuan edukasi &amp; akses literatur terbuka.</span>
-    <div class="d-flex gap-3">
-      <span>Privasi &amp; Ketentuan</span>
-      <span>â€¢</span>
-      <span>Bantuan</span>
+    <span>© 2025 ScribdAccess. Dibuat untuk tujuan edukasi &amp; akses literatur terbuka.</span>
+    <div class="d-flex gap-3 align-items-center">
+      <a href="../v1/" style="color:var(--gray);text-decoration:none;font-weight:700;">Versi Klasik (v1)</a>
+      <span>•</span>
+      <a href="https://github.com/Cecepagus08" target="_blank" rel="noopener" style="color:var(--gray);text-decoration:none;">GitHub</a>
+      <span>•</span>
+      <a href="https://www.instagram.com/cecep_agus08/#" target="_blank" rel="noopener" style="color:var(--gray);text-decoration:none;">Instagram</a>
     </div>
   </div>
 </footer>
 
 <script>
 const boxData = [
-  { no:"1", title:"Bebas Iklan",       gambar:'/v1/assets/no.png',          text:"Membaca dokumen di Scribd tanpa gangguan iklan memberikan pengalaman yang lebih nyaman dan fokus." },
-  { no:"2", title:"Bebas Langganan",   gambar:'/v1/assets/credit-card.png', text:"Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan." },
-  { no:"3", title:"Akses Tanpa Batas", gambar:'/v1/assets/infinity.png',   text:"Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan." }
+  { no:"1", title:"Bebas Iklan",       gambar:'assets/no.png',          text:"Membaca dokumen di Scribd tanpa gangguan iklan memberikan pengalaman yang lebih nyaman dan fokus." },
+  { no:"2", title:"Bebas Langganan",   gambar:'assets/credit-card.png', text:"Tidak perlu mengeluarkan biaya langganan untuk mengakses jurnal dan dokumen yang Anda butuhkan." },
+  { no:"3", title:"Akses Tanpa Batas", gambar:'assets/infinity.png',   text:"Buka beragam dokumen dan jurnal yang tersedia di Scribd kapan saja tanpa pembatasan." }
 ];
 
 let errorMsg = document.querySelector(".error-message");
@@ -464,7 +469,7 @@ boxData.forEach(item => {
       <div class="card-feature">
         <div class="icon-wrapper">
           <img src="${item.gambar}" width="30" height="30" alt="${item.title}"
-               onerror="this.onerror=null;this.src='';this.alt='';">
+               onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='../assets/'+this.getAttribute('src').replace(/^.*[\\\\/]/, '');}">
         </div>
         <h3 class="box-title">${item.title}</h3>
         <p class="box-deskripsi">${item.text}</p>
@@ -487,6 +492,12 @@ urlInput.addEventListener('input', () => {
   } else {
     buttonReadNow.classList.remove("active");
     inputContainer.classList.remove("border-primary");
+  }
+});
+
+urlInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    cekUrl();
   }
 });
 
@@ -517,7 +528,7 @@ function setLoading(on) {
 
 function cekUrl() {
   const url = urlInput.value;
-  if (!url) {
+  if (!url || !url.trim()) {
     notifOn();
     errorMsg.innerText = "Masukkan URL Dokumen!";
     inputContainer.classList.add("border-danger");
@@ -530,8 +541,14 @@ function cekUrl() {
 }
 
 function proses(url) {
-  const match  = url.match(/\/(\d+)\//);
-  const result = match ? match[1] : null;
+  const trimmed = url.trim();
+  let result = null;
+  if (/^\d+$/.test(trimmed)) {
+    result = trimmed;
+  } else {
+    const match = trimmed.match(/(?:doc(?:ument)?|presentation|embeds)?\/(\d+)/i) || trimmed.match(/\/(\d+)(?:\/|[?#]|$)/);
+    result = match ? match[1] : null;
+  }
   if (result) {
     setLoading(true);
     setTimeout(() => {

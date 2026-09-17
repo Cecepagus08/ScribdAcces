@@ -24,7 +24,7 @@ boxData.forEach(item => {
   const box = `
           <div class="col-12 col-sm-6 col-lg-5 mt-3">
             <div class="text-dark shadow-lg bg-light-subtle rounded-2 p-2 d-flex flex-column h-100">
-                <img src="${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3" alt="">
+                <img src="${item.gambar}" class="my-3 col-3 col-sm-4 col-lg-3" alt="${item.title}" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='../assets/'+this.getAttribute('src').replace(/^.*[\\\\/]/, '');}">
                 <h1 class="fs-2 box-title">${item.title}</h1>
                 <p class="box-deskripsi m-0 flex-grow-1">${item.text}</p>
             </div>
@@ -98,30 +98,27 @@ function notifOff() {
 function cekUrl() {
   const url = urlInput.value;
   
-  if(!url){
+  if(!url || !url.trim()){
     notifOn();
     errorMsg.innerText = "Masukkan Url";
-    inputContainer.classList.add("border-danger")
-     inputContainer.classList.remove("border-secondary")
-  }else{
-    inputContainer.classList.remove("border-danger")
-    
-     inputContainer.classList.add("border-secondary")
-     proses(url);
+    inputContainer.classList.add("border-danger");
+    inputContainer.classList.remove("border-secondary");
+  } else {
+    inputContainer.classList.remove("border-danger");
+    inputContainer.classList.add("border-secondary");
+    proses(url);
   }
-  
-  
 }
+
 function proses(url) {
-  console.log("berhasil");
-
-  // Fungsi untuk mengekstrak angka di antara '/' pertama dan terakhir
-  function extractNumbers(url) {
-    const regex = /\/(\d+)\//; // Regex untuk mengambil angka di antara '/'
-    const match = url.match(regex); // Mencocokkan pola dengan URL
-
+  function extractNumbers(inputUrl) {
+    const trimmed = inputUrl.trim();
+    if (/^\d+$/.test(trimmed)) {
+      return trimmed;
+    }
+    const match = trimmed.match(/(?:doc(?:ument)?|presentation|embeds)?\/(\d+)/i) || trimmed.match(/\/(\d+)(?:\/|[?#]|$)/);
     if (match) {
-      return match[1]; // Kembalikan angka yang ditemukan
+      return match[1];
     }
     return null;
   }
@@ -137,19 +134,19 @@ function proses(url) {
   }
 }
 
-
+urlInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    cekUrl();
+  }
+});
 
 const btnPaste = document.querySelector(".btn-paste-url");
 
 btnPaste.addEventListener("click", () =>{
-  console.log("paste")
   navigator.clipboard.readText()
-        .then(text => {
-            
-            urlInput.value = text;
-
-            // Memicu event input agar fungsinya tetap berjalan
-            
-        })
-        .catch(err => console.error("Gagal mengambil teks dari clipboard:", err));
+    .then(text => {
+      urlInput.value = text;
+      urlInput.dispatchEvent(new Event('input'));
+    })
+    .catch(err => console.error("Gagal mengambil teks dari clipboard:", err));
 });
