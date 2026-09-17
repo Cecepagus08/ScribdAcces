@@ -1,9 +1,24 @@
 {
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/",
-      "destination": "/v2",
+      "destination": "/v2/",
       "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/ketentuan",
+      "destination": "/ketentuan.html"
+    },
+    {
+      "source": "/privasi",
+      "destination": "/privasi.html"
+    },
+    {
+      "source": "/bantuan",
+      "destination": "/bantuan.html"
     }
   ]
 }

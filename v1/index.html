@@ -24,6 +24,11 @@
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
 
+  <script>
+    if (window.location.pathname === '/v1') {
+      window.location.replace('/v1/' + window.location.search + window.location.hash);
+    }
+  </script>
   <title>ScribdAccess - Versi Klasik</title>
   <link rel="icon" type="image/png" href="assets/logo2.png">
   <link rel="apple-touch-icon" href="assets/logo2.png">
@@ -54,13 +59,11 @@
   </div>
 </nav>
   </section>
-<button onclick="notifOff()" class="alert d-flex bg-warning justify-content-evenly align-items-center my-5 center position-fixed gap-2 fw-medium p-2">
-    <i class="ph ph-warning-circle"></i>
-    <p class="m-0">error, <span class="error-message"></span></p>
-    
-      
-    <i class="ph ph-x"></i>
-  </button>
+<button id="alertToast" onclick="notifOff()" class="alert custom-toast d-flex bg-warning justify-content-between align-items-center gap-2 fw-medium p-2 border-0" style="opacity:0;visibility:hidden;pointer-events:none;">
+    <i class="ph ph-warning-circle fs-5"></i>
+    <p class="m-0">Error: <span class="error-message"></span></p>
+    <i class="ph ph-x fs-5"></i>
+</button>
   
   
   <section>
@@ -158,22 +161,28 @@ cepat dan efisuen -->
   
   
   
-  <section>
-    <div class="container mt-5 pt-5 mb-5">
-      <div class="row gap-1 justify-content-center align-items-center ">
-        <a href="https://github.com/Cecepagus08" class="text-decoration-none  col-1 sosmed d-flex justify-content-center align-items-center text-center ">
-          <p class="m-0 fs-1 d-flex align-items-center justify-content-center">
-            <i class="ph ph-github-logo m-0"></i>
-          </p>
+  <footer class="mt-5 pt-4 pb-4 border-top">
+    <div class="container text-center">
+      <div class="d-flex gap-2 justify-content-center align-items-center mb-3">
+        <a href="https://github.com/Cecepagus08" target="_blank" rel="noopener" class="text-decoration-none sosmed d-inline-flex justify-content-center align-items-center text-center">
+          <i class="ph ph-github-logo fs-3"></i>
         </a>
-        <a href="https://www.instagram.com/cecep_agus08/#" class="text-decoration-none  col-1 sosmed d-flex justify-content-center align-items-center text-center ">
-          <p class="m-0 fs-1 d-flex align-items-center justify-content-center">
-            <i class="ph ph-instagram-logo  m-0"></i>
-          </p>
+        <a href="https://www.instagram.com/cecep_agus08/#" target="_blank" rel="noopener" class="text-decoration-none sosmed d-inline-flex justify-content-center align-items-center text-center">
+          <i class="ph ph-instagram-logo fs-3"></i>
         </a>
       </div>
+      <div class="d-flex gap-3 justify-content-center align-items-center flex-wrap mb-2" style="font-size: 13px;">
+        <a href="../ketentuan.html" class="text-secondary text-decoration-none">Ketentuan Layanan</a>
+        <span class="text-muted">&bull;</span>
+        <a href="../privasi.html" class="text-secondary text-decoration-none">Kebijakan Privasi</a>
+        <span class="text-muted">&bull;</span>
+        <a href="../bantuan.html" class="text-secondary text-decoration-none">Bantuan &amp; FAQ</a>
+        <span class="text-muted">&bull;</span>
+        <a href="../v2/" class="text-primary fw-bold text-decoration-none">Versi 2.0 Modern &rarr;</a>
+      </div>
+      <p class="text-muted mb-0" style="font-size: 12px;">&copy; 2026 ScribdAccess (v1 Klasik). Dibuat untuk tujuan edukasi &amp; literasi terbuka.</p>
     </div>
-  </section>
+  </footer>
   
 
 

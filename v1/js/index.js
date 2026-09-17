@@ -55,34 +55,39 @@ urlInput.addEventListener('input', () => {
 // buttonReadNow.style.pointerEvents = 'none';
 // 
 // buttonReadNow.addEventListener('click', proses);
-let alert = document.querySelector(".alert");
-let timeoutID; // Variabel untuk menyimpan ID timeout
+let alertEl = document.querySelector("#alertToast") || document.querySelector(".alert");
+let timeoutID;
 
 function notifOn() {
-  alert.classList.add("active");
+  if (!alertEl) return;
+  alertEl.classList.add("active");
+  alertEl.style.opacity = "1";
+  alertEl.style.visibility = "visible";
+  alertEl.style.pointerEvents = "auto";
 
-  // Jika sudah ada timeout sebelumnya, hapus terlebih dahulu
   if (timeoutID) {
     clearTimeout(timeoutID);
   }
 
-  // Atur timeout baru
   timeoutID = setTimeout(() => {
     notifOff();
   }, 1700);
 }
 
 function notifOff() {
-  // Hapus class aktif
-  alert.classList.remove("active");
-  inputContainer.classList.remove("border-danger")
+  if (!alertEl) return;
+  alertEl.classList.remove("active");
+  alertEl.style.opacity = "0";
+  alertEl.style.visibility = "hidden";
+  alertEl.style.pointerEvents = "none";
+  if (inputContainer) inputContainer.classList.remove("border-danger");
 
-  // Hapus timeout jika ada
   if (timeoutID) {
     clearTimeout(timeoutID);
-    timeoutID = null; // Reset ID timeout
+    timeoutID = null;
   }
 }
+window.notifOff = notifOff;
 
 
 // Panggil notifOn terlebih dahulu, lalu hapus setelah 100ms
